@@ -11,7 +11,7 @@ install:
   ```
 use :
   ```
-  model_user->logined();
+  model_user->logined();// dispatch event and job ->logined(request()->header('User-Agent'))
   model_user->listLogined() default per page 5, page 1
   model_user->listLogined(per_page,page)
   ```
