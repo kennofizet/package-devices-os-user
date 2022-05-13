@@ -1,0 +1,29 @@
+{
+    "name": "kennofizet/devices-os-user",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Package\\Kennofizet\\DevicesOsUser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kenno Fizet",
+            "email": "kennofizetreal@gmail.com"
+        }
+    ],
+    "require": {
+        "hisorange/browser-detect":"*",
+        "stevebauman/location":"*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Package\\Kennofizet\\DevicesOsUser\\Providers\\PackageServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
