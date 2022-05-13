@@ -4,6 +4,11 @@ customer save data source :
   "hisorange/browser-detect":"*",
   "stevebauman/location":"*"
   ```
+install: 
+  ```
+  composer require kennofizet/devices-os-user
+  php artisan migrate
+  ```
 use :
   ```
   model_user->logined();
