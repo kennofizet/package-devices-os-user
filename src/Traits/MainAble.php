@@ -19,13 +19,21 @@ use Illuminate\Http\Response;
 
 trait MainAble
 {
-    public function logined()
+    public function logined($agent='')
     {
+        if ($agent) {
+            $name_browser = (new Browser)->parse($agent)->browserFamily();
+            $flat_form = (new Browser)->parse($agent)->platformName();
+            $is_mobile = (new Browser)->parse($agent)->isMobile();
+        }else{
+            $name_browser = Browser::browserFamily();
+            $flat_form = Browser::platformName();
+            $is_mobile = Browser::isMobile();
+        }
         $ip = request()->ip();
         $position = Location::get($ip);
-        $name_browser = Browser::browserFamily();
-        $flat_form = Browser::platformName();
-        $is_mobile = Browser::isMobile();
+        
+        
 
         $this->saveUserBrowserTotal($name_browser);
 
